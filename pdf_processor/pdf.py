@@ -6,6 +6,7 @@ import pdfplumber
 from pdfminer.high_level import extract_text
 
 from .formula import FormulaDetector
+from .figure import extract_figures_page_ocr
 from .text import clean_text, split_paragraphs
 
 
@@ -60,8 +61,8 @@ class PDFProcessor:
         # if self.formula_detector == "baidu":
         #     content["formulas"] = formula._detect_formulas_baidu(file_path)
 
-        # # 图表处理
-        # content["figures"] = extract_figures_page_ocr(file_path)
+        # 图表处理
+        content["figures"] = extract_figures_page_ocr(file_path)
 
         return content
 

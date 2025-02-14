@@ -28,5 +28,9 @@ config = {
     },
     "llm": {
         "model": "qwen-turbo"
+    },
+    "baidu": {
+        "key": "your-baidu-yun-key",
+        "secret": "your-baidu-yun-sec"
     }
 }

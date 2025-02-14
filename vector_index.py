@@ -197,4 +197,4 @@ def main():
         print("\n" + "="*50 + "\n")
 
 if __name__ == "__main__":
-    main()
+    main_with_args()

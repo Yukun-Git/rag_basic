@@ -232,6 +232,7 @@ class RouteAgent:
 
 # 初始化示例
 if __name__ == "__main__":
+    
     # 初始化各组件（需要具体实现）
     llm = QwenClient(model_name=config["llm"]["model"])
     vector_manager = VectorIndexManager()
@@ -264,4 +265,18 @@ if __name__ == "__main__":
             response = await agent.a_invoke(query)
             print(response["answer"])
 
-    asyncio.run(test())
+    async def process_questions():
+        with open('question.txt', 'r', encoding='utf-8') as f:
+            questions = [line.strip() for line in f if line.strip()]
+        
+        # 并行获取所有答案
+        tasks = [agent.a_invoke(q) for q in questions]
+        response = await asyncio.gather(*tasks)
+        answers = [res['answer'] for res in response]
+        
+        # 写入文件（保持顺序）
+        with open('answer.txt', 'w', encoding='utf-8') as f:
+            for q, a in zip(questions, answers):
+                f.write(f"question: {q}\nanswer: {a}\n\n")
+
+    asyncio.run(process_questions())

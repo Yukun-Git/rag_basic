@@ -32,7 +32,7 @@ def extract_figures_page_ocr(file_path: str) -> List[str]:
     return figure_texts
 
 def extract_figures_by_pytesseract(file_path: str) -> List[str]:
-    """WARNING by 瑜琨: 图片的识别精度非常差，方法需要继续优化"""
+    """WARNING: 图片的识别精度非常差，方法需要继续优化"""
     figure_texts = []
     with fitz.open(file_path) as doc:
         for page_index in range(len(doc)):

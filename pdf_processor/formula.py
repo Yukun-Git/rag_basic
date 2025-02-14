@@ -4,12 +4,14 @@ from typing import List
 import fitz  # PyMuPDF
 import requests
 
+from config import config
+
 
 class FormulaDetector:
 
     def __init__(self):
-        self.baidu_key = "WiszoH2kLAVuxdfjzGYDYZ7J"
-        self.baidu_secret = "Y0RP8pdNMfWhU0HC4ofg6Cs4BoIElJFH"
+        self.baidu_key = config["baidu"]["key"]
+        self.baidu_secret = config["baidu"]["secret"]
 
     def _get_baidu_token(self) -> str:
         """获取百度API访问令牌"""
