@@ -1,14 +1,17 @@
-from langchain.agents import initialize_agent
-from langchain_community.chat_models import ChatOpenAI
-from langchain.tools import Tool
-from langchain.schema import Document
-from vector_index import VectorIndexManager
 import asyncio
+from typing import Any, Dict
+
+from langchain.agents import initialize_agent
 from langchain.prompts import PromptTemplate
-from qwen_llm import QwenClient
+from langchain.schema import Document
+from langchain.tools import Tool
+from langchain_community.chat_models import ChatOpenAI
 from langgraph.graph import StateGraph
 from langgraph.prebuilt import create_react_agent
-from typing import Dict, Any
+
+from qwen_llm import QwenClient
+from vector_index import VectorIndexManager
+
 
 # 工具类：法律检索
 class LegalSearchTool(Tool): 

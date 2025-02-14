@@ -1,7 +1,9 @@
-import camelot
-import pdfplumber
-import pandas as pd
 from collections import deque
+
+import camelot
+import pandas as pd
+import pdfplumber
+
 
 def extract_table_by_pdfplumber(pdf_path, title_search_height=50):
     """
@@ -123,15 +125,15 @@ def extract_table_by_camelot(pdf_path):
 if __name__ == '__main__':
     pdf_path = "../data/raw/fund/guotai.pdf"
     import tabula
+
     # dfs = tabula.read_pdf(pdf_path, pages='all', multiple_tables=True)
-    
+
     # tables = extract_table_by_pdfplumber(pdf_path)
     # import ipdb; ipdb.set_trace()
     # print("OK")
 
     tables = camelot.read_pdf(pdf_path, pages='all')
     import ipdb; ipdb.set_trace()
-
     # tables = []
     # with pdfplumber.open(pdf_path) as pdf:
     #     for page in pdf.pages:

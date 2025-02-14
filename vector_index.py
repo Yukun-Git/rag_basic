@@ -1,16 +1,19 @@
-import os, yaml
 import argparse
+import os
 import shutil
+from typing import List
+
 import dashscope
 import numpy as np
-from typing import List
-from config import config
+import yaml
+from langchain.embeddings.base import Embeddings
 from langchain.schema import Document
-from pdf_processor.pdf import PDFProcessor
-from embeddings import DashScopeEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.embeddings.base import Embeddings
+
+from config import config
+from embeddings import DashScopeEmbeddings
+from pdf_processor.pdf import PDFProcessor
 
 
 class VectorIndexManager:

@@ -1,26 +1,27 @@
+import base64
+import io
+import os
+import re
+from typing import Dict, List
+
+import camelot
+import cv2
+import dashscope
+import fitz  # PyMuPDF
+import numpy as np
+import pandas as pd
+import pdfplumber
+import pytesseract
+import requests
+import tabula
+from langchain.text_splitter import TextSplitter
 from pdfminer.high_level import extract_text
 from PIL import Image
-from typing import Dict, List
-import camelot
-import tabula
-import io, os, re
-import pytesseract
-import fitz  # PyMuPDF
-import pandas as pd
-import requests
-import dashscope
-import base64
-import requests
-from typing import List
-import fitz
-from PIL import Image
-import io, cv2
-import numpy as np
-import pdfplumber
-from langchain.text_splitter import TextSplitter
+
+from .figure import extract_figures_page_ocr
 from .formula import FormulaDetector
 from .text import clean_text, split_paragraphs
-from .figure import extract_figures_page_ocr
+
 
 class PDFProcessor:
     """PDF处理器"""
