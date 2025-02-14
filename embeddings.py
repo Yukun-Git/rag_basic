@@ -1,19 +1,12 @@
 import concurrent.futures
-import os
-import shutil
 import time
 from typing import List
 
 import dashscope
 import numpy as np
-import yaml
 from langchain.embeddings.base import Embeddings
-from langchain.schema import Document
-from langchain_community.vectorstores import FAISS
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from config import config
-from pdf_processor.pdf import PDFProcessor
 
 
 class DashScopeEmbeddings(Embeddings):

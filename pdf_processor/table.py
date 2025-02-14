@@ -124,10 +124,8 @@ def extract_table_by_camelot(pdf_path):
 
 if __name__ == '__main__':
     pdf_path = "../data/raw/fund/guotai.pdf"
-    import tabula
 
     # dfs = tabula.read_pdf(pdf_path, pages='all', multiple_tables=True)
-
     # tables = extract_table_by_pdfplumber(pdf_path)
     # import ipdb; ipdb.set_trace()
     # print("OK")

@@ -3,10 +3,6 @@ import os
 import shutil
 from typing import List
 
-import dashscope
-import numpy as np
-import yaml
-from langchain.embeddings.base import Embeddings
 from langchain.schema import Document
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter

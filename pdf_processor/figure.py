@@ -1,21 +1,10 @@
-import base64
 import io
-import os
-import re
-from typing import Dict, List
+from typing import List
 
-import camelot
 import cv2
-import dashscope
 import fitz  # PyMuPDF
 import numpy as np
-import pandas as pd
-import pdfplumber
 import pytesseract
-import requests
-import tabula
-from langchain.text_splitter import TextSplitter
-from pdfminer.high_level import extract_text
 from PIL import Image
 
 
